@@ -48,16 +48,13 @@
                 <div class="card-body form-card-body">
 
                     <!--
-                        POST /students
-
-                        input name
-                            ↓
-                        @ModelAttribute RequestStudent
+                    http://localhost:5050/students 에 post 요청 진행
                     -->
                     <form th:action="@{/students}"
                           method="post">
 
 
+                        <!--name 과  request dto와 필드값 동일하게 진행-->
                         <!-- Student ID -->
                         <div class="mb-4">
 
