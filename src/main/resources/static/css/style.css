@@ -1,0 +1,254 @@
+/* =========================
+   Global
+========================= */
+
+body {
+    margin: 0;
+    background: #f5f6f8;
+    color: #212529;
+    font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+}
+
+
+.page-wrapper {
+    min-height: 100vh;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.page-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #7a7f87;
+}
+
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+
+.page-description {
+    color: #7a7f87;
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   Card
+========================= */
+
+.student-card {
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow:
+            0 6px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+
+/* =========================
+   Table
+========================= */
+
+.student-table thead {
+    background: #f8f9fa;
+}
+
+
+.student-table th {
+    padding: 18px 20px;
+
+    color: #6c757d;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #e9ecef;
+}
+
+
+.student-table td {
+    padding: 18px 20px;
+
+    font-size: 0.95rem;
+
+    border-bottom: 1px solid #f0f1f2;
+
+    white-space: nowrap;
+}
+
+
+.student-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.student-table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+
+.student-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+
+.student-name {
+    font-weight: 600;
+}
+
+
+/* =========================
+   RC Badge
+========================= */
+
+.rc-badge {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    background: #f0f1f3;
+
+    border-radius: 999px;
+
+    color: #495057;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Empty State
+========================= */
+
+.empty-message {
+    padding: 50px 20px !important;
+    color: #9a9fa6;
+}
+
+
+/* =========================
+   Button
+========================= */
+
+.btn {
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 600;
+}
+
+
+.btn-new-student {
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.form-container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+
+.form-card-body {
+    padding: 36px;
+}
+
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+.form-control {
+    min-height: 48px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dee2e6;
+
+    padding: 10px 14px;
+
+    transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease;
+}
+
+
+.form-control:focus {
+    border-color: #212529;
+
+    box-shadow:
+            0 0 0 3px rgba(33, 37, 41, 0.08);
+}
+
+
+.form-control::placeholder {
+    color: #adb5bd;
+}
+
+
+.form-text {
+    margin-top: 7px;
+
+    color: #8a8f96;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .page-title {
+        font-size: 1.7rem;
+    }
+
+
+    .btn-new-student {
+        width: 100%;
+    }
+
+
+    .form-card-body {
+        padding: 24px;
+    }
+
+
+    .student-table th,
+    .student-table td {
+        padding: 15px 16px;
+    }
+
+}
