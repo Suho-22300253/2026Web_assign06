@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/students")
 public class StudentController {
 
-    public final StudentService studentService;
+    private final StudentService studentService;
 
     public StudentController(StudentService studentService){
         this.studentService = studentService;
@@ -50,18 +50,41 @@ public class StudentController {
         return "students/form";
     }
 
+    @PostMapping
     /*
-    form의 method - post 형식으로 보 -> submit 시 form의 데이터 전송
+    form의 method - post 형식으로 보낸다 -> submit 시 form의 데이터 전송
     @ModelAttribute Spring MVC가 Form의 name과 RequestStudent의 필드를 비교해서 연결해준다
     하나하나 값을 꺼내서 객체를 만들 필요가 없음
+
+    new 를 안해주는 이유 : new -> 만드는 화면
+    post : 실제로 만드는 것
+    return students/list 할 경우 데이터 추가 화면이 발생하지 않음
+    정상: create -> 학생 저장 -> redirect: 브라우저에게 /students로 다시 요청 -> 브라우저가 get으로 url 받음
+ String list(Model model) 실행 -> 화면에 보여줌
+    현재: 학생 저장 -> list.html 바로 렌더링(<tr th:each="student : ${students}">가 있는데
+                    post 에서는 model.addAttribute("students", ...) 을 진행하지 않았다.)
      */
-    @PostMapping
-    // new 를 안해주는 이유 : new -> 만드는 화면
-    // post : 실제로 만드는 것
     public String create( @ModelAttribute RequestStudent request) {
         studentService.save(request);
         // /students로 다시 요청 - > @GetMapping public String list(Model model)
         return "redirect:/students";
     }
+    /* 아래와 같이 짤 경우 -> 새로고침 할때 마다 추가된다.
+    @PostMapping
+    public String create(
+            @ModelAttribute RequestStudent request,
+            Model model
+    ) {
+        studentService.save(request);
+
+        model.addAttribute(
+                "students",
+                studentService.findall()
+        );
+
+        return "students/list";
+    }
+     */
+
 
 }
