@@ -62,7 +62,7 @@ src
 
 2. Spring Boot 실행
 
-3. Browser 접속
+3. Browser 접속 - localhost:5050/students
 
 ### 주요 화면
 ![base browser.png](captures/base%20browser.png)
@@ -184,12 +184,12 @@ HTML Form의 name과 DTO의 필드 이름이 같으면 Spring MVC가 Form 데이
 3. POST /students
 4. StudentController의 PostMapping
 5. @ModelAttribute을 통해 RequestStudent에 데이터 담음
-7. StudentService
-8. StudentRepository
-9. MemoryStudentRepository
-10. redirect:/students
-11. GET /students 
-12. 학생 목록 화면
+6. StudentService 
+7. StudentRepository 
+8. MemoryStudentRepository 
+9. redirect:/students 
+10. GET /students 
+11. 학생 목록 화면
 
 ### Problem & Solution
 
