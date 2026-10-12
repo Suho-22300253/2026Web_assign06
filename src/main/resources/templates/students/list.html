@@ -34,6 +34,7 @@
                 </p>
             </div>
 
+            <!-- thymeleaf 문법으로 이를 통해 /students/new url을 실행 -->
             <a th:href="@{/students/new}"
                class="btn btn-dark btn-new-student">
                 + Add Student
@@ -65,15 +66,13 @@
                         <tbody>
 
                         <!--
-                            Model의 "students" 데이터를 반복
+                            model.addAttribute에서 students 라고 작성했기 때문에 students로 서버 데이터에 접근가능
 
-                            model.addAttribute(
-                                "students",
-                                studentService.findall()
-                            );
+                           써져있는 값들은 예시 값들
                         -->
                         <tr th:each="student : ${students}">
 
+                            <!-- students list에 담긴 내용중 돌아가면 하나씩 내용 출력 -->
                             <td th:text="${student.id}">
                                 1
                             </td>
